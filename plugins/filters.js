@@ -65,6 +65,13 @@ if(pattern.test(message.message)){
 }
 });
     }
+      if (budy.includes(`jinn`)) {
+      await.updatePresence(from, Presence.composing)
+      await message.client.sendMessage(message.jid, fs.readFileSync('./sound/jinn.mp3'), MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+      
+}
+});
+    }
     var filtreler = await FilterDb.getFilter(message.jid);
     if (!filtreler) return; 
     filtreler.map(
